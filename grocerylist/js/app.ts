@@ -48,5 +48,4 @@ module Controller{
         document.getElementById("item-"+this.getAttribute("alt")).style.textDecoration="line-through";
     }
 }
-document.addEventListener('DOMContentLoaded',Controller.init
-    , false);
+document.addEventListener('DOMContentLoaded',Controller.init , false);
