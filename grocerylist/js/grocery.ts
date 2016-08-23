@@ -1,22 +1,5 @@
 namespace Grocery {
-    export class Main {
-        
-        constructor() {
-            
-        }
-
-        init(event: any) {
-            console.log("fazendo os bindings");
-            let itemDao=new LocalItemDao();
-            itemDao.adicionar({descricao:"rsrs",comprado:false});
-            let itens=itemDao.listar();
-            for(var i in itens){
-                console.log(i+'\n');
-            }
-        }
-    }
-
-    class LocalItemDao implements ItemDao {
+    export class LocalItemDao implements ItemDao {
         itens: Array<Item>;
         constructor(){
             let tbItens = localStorage.getItem("itens");// Recupera os dados armazenados
@@ -29,14 +12,13 @@ namespace Grocery {
             
             this.itens.push(item);
             localStorage.setItem("itens", JSON.stringify(this.itens));
-            alert("Registro adicionado.");
             return true;
         }
         remover(index: number): boolean{
-            return false;
-        }
-        atualizar(index:number, item: Item): boolean{
-            return false;
+            this.itens.splice(index, 1);
+            localStorage.setItem("itens", JSON.stringify(this.itens));
+            alert("Registro excluído.");
+            return true;
         }
         listar(): Array<Item>{
             return this.itens;

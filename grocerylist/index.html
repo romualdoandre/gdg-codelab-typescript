@@ -20,8 +20,8 @@
             <form class="pure-form">
             <fieldset>
                 <legend>Item</legend>
-                <input type="text" required placeholder="Descrição">
-                <button onsubmit="return false" class="pure-button pure-button-primary">Adicionar</button>
+                <input type="text" id="descricao" required placeholder="Descrição">
+                <a id="adicionar" class="pure-button pure-button-primary">Adicionar</a>
             </fieldset>
             </form>
         </div>
@@ -36,27 +36,7 @@
                     </tr>
                 </thead>
 
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Honda</td>
-                        <td><input type="checkbox"/></td>
-                        <td><a class="pure-button pure-button-secundary" href="#">Remover</a></td>
-                    </tr>
-
-                    <tr>
-                        <td>2</td>
-                        <td>Toyota</td>
-                        <td><input type="checkbox"/></td>
-                        <td><a class="pure-button pure-button-secundary" href="#">Remover</a></td>
-                    </tr>
-
-                    <tr>
-                        <td>3</td>
-                        <td>Hyundai</td>
-                        <td><input type="checkbox"/></td>
-                        <td><a class="pure-button pure-button-secundary" href="#">Remover</a></td>
-                    </tr>
+                <tbody id="lista">
                 </tbody>
             </table>
         </div>
