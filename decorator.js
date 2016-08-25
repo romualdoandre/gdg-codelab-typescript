@@ -20,3 +20,26 @@ var Greeting = (function () {
 }());
 var myGreeting = new Greeting();
 myGreeting.greet(); // console will output 'Hello!'
+function f() {
+    console.log("f(): evaluated");
+    return function (target, key, descriptor) {
+        console.log(key + " called in f");
+    };
+}
+function g() {
+    console.log("g(): evaluated");
+    return function (target, key, descriptor) {
+        console.log(key + " called in g");
+    };
+}
+var C = (function () {
+    function C() {
+    }
+    C.prototype.method = function () { console.log("Hello"); };
+    __decorate([
+        f(),
+        g()
+    ], C.prototype, "method", null);
+    return C;
+}());
+new C().method();
