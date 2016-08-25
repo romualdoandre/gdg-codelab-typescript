@@ -1,19 +1,21 @@
 module Acme.Utils{
-    export class Tracker{
+    class Tracker{
         count=0;
-        start(){
-            window.onmousemove=e=>{
-                console.log(this.count++);
-            }
+        plusOne(){
+            this.count++;
         }
     }
+    export var tracker=new Tracker();
 }
 
 module Acme.Utils{
     export var greeting="hello"
 }
 
-import Acc=Acme.Utils;
-Acme.Utils.greeting;
-var t=new Acc.Tracker();
-t.start();
+import tracker=Acme.Utils.tracker;
+console.log(Acme.Utils.greeting);
+tracker.plusOne();
+console.log(tracker.count);
+import tracker2=Acme.Utils.tracker;
+tracker2.plusOne();
+console.log(tracker2.count);

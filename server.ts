@@ -1,4 +1,4 @@
-/// <reference path="node.d.ts"/>
+/// <reference path="typings/node.d.ts"/>
 
 import * as http from "http";
 

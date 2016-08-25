@@ -1,4 +1,4 @@
-/// <reference path="node.d.ts"/>
+/// <reference path="typings/node.d.ts"/>
 "use strict";
 var http = require("http");
 function simpleServer(port, message) {

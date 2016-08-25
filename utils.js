@@ -6,15 +6,12 @@ var Acme;
             function Tracker() {
                 this.count = 0;
             }
-            Tracker.prototype.start = function () {
-                var _this = this;
-                window.onmousemove = function (e) {
-                    console.log(_this.count++);
-                };
+            Tracker.prototype.plusOne = function () {
+                this.count++;
             };
             return Tracker;
         }());
-        Utils.Tracker = Tracker;
+        Utils.tracker = new Tracker();
     })(Utils = Acme.Utils || (Acme.Utils = {}));
 })(Acme || (Acme = {}));
 var Acme;
@@ -24,7 +21,10 @@ var Acme;
         Utils.greeting = "hello";
     })(Utils = Acme.Utils || (Acme.Utils = {}));
 })(Acme || (Acme = {}));
-var Acc = Acme.Utils;
-Acme.Utils.greeting;
-var t = new Acc.Tracker();
-t.start();
+var tracker = Acme.Utils.tracker;
+console.log(Acme.Utils.greeting);
+tracker.plusOne();
+console.log(tracker.count);
+var tracker2 = Acme.Utils.tracker;
+tracker2.plusOne();
+console.log(tracker2.count);
