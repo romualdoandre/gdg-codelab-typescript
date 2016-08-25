@@ -1,22 +1,24 @@
-class Point{
-    //x: number;
-    //y: number;
-    private color: string;
-    constructor(public x:number,public y:number){
-        this.x=x;
-        this.y=y;
-        this.color="red";
+namespace Geometry{
+    export class Point{
+        //x: number;
+        //y: number;
+        private color: string;
+        constructor(public x:number,public y:number){
+            this.x=x;
+            this.y=y;
+            this.color="red";
+        }
+        dist(){ return Math.sqrt(this.x*this.x+this.y*this.y)}
+        static origin=new  Point(0,0);
+        
     }
-    dist(){ return Math.sqrt(this.x*this.x+this.y*this.y)}
-    static origin=new  Point(0,0);
-    
 }
 
-let p=new Point(10,20);
+let p=new Geometry.Point(10,20);
 p.x=10;
 p.y=20;
 
-class Point3D extends Point{
+class Point3D extends Geometry.Point{
     constructor(x: number,y:number,public z:number){
         super(x,y);
         this.z=z;

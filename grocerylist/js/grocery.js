@@ -1,12 +1,27 @@
 var Grocery;
 (function (Grocery) {
-    var Main = (function () {
-        function Main() {
+    var LocalItemDao = (function () {
+        function LocalItemDao() {
+            var tbItens = localStorage.getItem("itens"); // Recupera os dados armazenados
+            this.itens = JSON.parse(tbItens); // Converte string para objeto
+            if (this.itens == null)
+                this.itens = [];
         }
-        Main.prototype.init = function () {
-            console.log("fazendo os bindings");
+        LocalItemDao.prototype.adicionar = function (item) {
+            this.itens.push(item);
+            localStorage.setItem("itens", JSON.stringify(this.itens));
+            return true;
         };
-        return Main;
+        LocalItemDao.prototype.remover = function (index) {
+            this.itens.splice(index, 1);
+            localStorage.setItem("itens", JSON.stringify(this.itens));
+            alert("Registro excluído.");
+            return true;
+        };
+        LocalItemDao.prototype.listar = function () {
+            return this.itens;
+        };
+        return LocalItemDao;
     }());
-    Grocery.Main = Main;
+    Grocery.LocalItemDao = LocalItemDao;
 })(Grocery || (Grocery = {}));

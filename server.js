@@ -1,4 +1,5 @@
 /// <reference path="node.d.ts"/>
+"use strict";
 var http = require("http");
 function simpleServer(port, message) {
     http.createServer(function (req, res) {

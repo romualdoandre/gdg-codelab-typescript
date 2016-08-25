@@ -14,4 +14,6 @@ function makeAccumulator(): Accumulator{
     }
 }
 let a=makeAccumulator();
+a.clear();
 a.add(10);
+console.log(a.result());
