@@ -7,12 +7,12 @@ interface Thing{
         (n: number): number;
         data: any;
     };
-    new (s: string): Element;
     [index:number]: Date;
     (): Document;
 }
 
 function doSomething(x: Thing){
+    
     x.foo.data;
     return x.a;
 }
