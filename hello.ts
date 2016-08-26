@@ -9,6 +9,7 @@ interface Thing{
     };
     new (s: string): Element;
     [index:number]: Date;
+    (): Document;
 }
 
 function doSomething(x: Thing){
