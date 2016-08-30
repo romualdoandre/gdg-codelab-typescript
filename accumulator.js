@@ -12,3 +12,4 @@ a.add(10);
 console.log(a.result());
 a.add(10);
 console.log(a.result());
+//# sourceMappingURL=accumulator.js.map

@@ -46,3 +46,4 @@ var Controller;
     }
 })(Controller || (Controller = {}));
 document.addEventListener('DOMContentLoaded', Controller.init, false);
+//# sourceMappingURL=app.js.map

@@ -3,3 +3,4 @@ function doSomething(x) {
     return x.a;
 }
 //var n=doSomething({a:10,b:"hello"}); 
+//# sourceMappingURL=hello.js.map

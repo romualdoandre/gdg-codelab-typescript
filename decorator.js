@@ -43,3 +43,4 @@ var C = (function () {
     return C;
 }());
 new C().method();
+//# sourceMappingURL=decorator.js.map

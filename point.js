@@ -18,3 +18,4 @@ var p = new Geometry.Point(10, 20);
 p.x = 10;
 p.y = 20;
 console.log(p.dist());
+//# sourceMappingURL=point.js.map

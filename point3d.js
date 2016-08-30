@@ -16,3 +16,4 @@ var Point3D = (function (_super) {
     };
     return Point3D;
 }(Geometry.Point));
+//# sourceMappingURL=point3d.js.map
